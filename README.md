@@ -7,7 +7,7 @@ dependency-free Python library, unit tests and a live interactive dashboard.
 
 [![Live index](https://img.shields.io/badge/live%20index-github%20pages-0e7490)](https://marknwilliam.github.io/manufacturing-analytics/)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](#)
-[![Tests](https://img.shields.io/badge/tests-317%20passing-green)](#)
+[![Tests](https://img.shields.io/badge/tests-329%20passing-green)](#)
 [![Tools](https://img.shields.io/badge/tools-11-orange)](#)
 
 </div>
@@ -37,10 +37,13 @@ that opens offline.
 | 13 | **Granulation Area Log** | Are the area process times and downtime codes logged to SOP MT-145? | [repo](https://github.com/MarkNwilliam/granulation-area-log) · [demo](https://marknwilliam.github.io/granulation-area-log/) |
 | 14 | **Product Cleaning Scheduler** | What is the cleaning schedule and finish time for the crew size? | [repo](https://github.com/MarkNwilliam/product-cleaning-scheduler) · [demo](https://marknwilliam.github.io/product-cleaning-scheduler/) |
 | 15 | **Solution Preparation Calculator** | How much of each chemical do I measure for this solution? | [repo](https://github.com/MarkNwilliam/solution-preparation-calculator) · [demo](https://marknwilliam.github.io/solution-preparation-calculator/) |
+| 16 | **DLT 50/300/300 Campaign Planner** | When will the campaign finish and where is the bottleneck? | [repo](https://github.com/MarkNwilliam/dlt-campaign-planner) · [demo](https://marknwilliam.github.io/dlt-campaign-planner/) |
 
 ---
 
 ## Tool previews
+
+The gallery on the live site also lists the wider portfolio (cement, oil and gas metering, calibration, beverage, process P&ID, data science, data engineering and software), with source links where there is no live demo yet.
 
 | OEE Dashboard | Batch Manufacturing |
 |---|---|
@@ -83,7 +86,7 @@ that opens offline.
   logistic regression, cost build-up and material yield, punch sticking
   scores, USP &lt;905&gt; Acceptance Value, as is assay correction, hold time limits, the USP flow character table
   and the Heckel, Ryshkewitch-Duckworth and Leuenberger compaction models.
-- **Testable** — `317` unit tests across the fifteen modules; run any of them
+- **Testable** — `329` unit tests across the sixteen interactive modules; run any of them
   with `python3 -m unittest test_*.py`.
 - **Zero-dependency dashboards** — plain HTML/CSS/JS with the native canvas
   API; no build step, no npm, works offline.
