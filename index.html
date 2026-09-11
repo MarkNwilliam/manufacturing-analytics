@@ -53,8 +53,8 @@
   <div class="chips">
     <span class="chip">Chemical Engineer</span>
     <span class="chip">WHO-prequalified cGMP plant</span>
-    <span class="chip">76 unit tests passing</span>
-    <span class="chip">6 live demos</span>
+    <span class="chip">158 unit tests passing</span>
+    <span class="chip">11 live demos</span>
   </div>
 </header>
 <div class="wrap">
@@ -92,9 +92,24 @@ const PROJECTS = [
   {name:'Water System Monitoring', repo:'water-system-monitoring', tag:'Purified water · USP <645>',
    img:'previews/water-system-monitoring.png', desc:'Conductivity evaluated against the temperature-dependent USP &lt;645&gt; stage-1 limit, RO/UF/EDI rejection and a live sanitisation schedule with countdown.',
    badges:['USP <645>','Python','17 tests']},
-  {name:'Manufacturing Cost Analysis', repo:'manufacturing-cost-analysis', tag:'Which product makes money · which process wastes it',
+{name:'Manufacturing Cost Analysis', repo:'manufacturing-cost-analysis', tag:'Which product makes money · which process wastes it',
    img:'previews/manufacturing-cost-analysis.png', desc:'Period revenue and cost build-up (raw material / labour / energy / overhead), margin per product line and downtime waste scored in money.',
    badges:['Margin · COGS','Python','10 tests']},
+  {name:'Tablet Sticking Predictor', repo:'tablet-sticking-predictor', tag:'Pre compression sticking and picking risk',
+   img:'previews/tablet-sticking-predictor.png', desc:'Ranks granule batches by punch face sticking risk from bulk and tapped density, LOD and the sieve fines, so the batch least likely to stick runs first.',
+   badges:['Punch face film','Python','19 tests']},
+  {name:'Granule PSD Analyzer', repo:'granule-psd-analyzer', tag:'Cumulative undersize · D10 D50 D90 · span',
+   img:'previews/granule-psd-analyzer.png', desc:'Sieve retained fractions to D values, span and uniformity, and hands the fines and coarse fractions straight into the sticking predictor.',
+   badges:['ASTM E11','Python','14 tests']},
+  {name:'OSD Tablet QC Dashboard', repo:'osd-tablet-qc-dashboard', tag:'Weight variation · AV · friability · hardness',
+   img:'previews/osd-tablet-qc-dashboard.png', desc:'USP 905 weight variation and Acceptance Value, content uniformity, USP 1216 friability, hardness spread and the force to hardness correlation.',
+   badges:['USP 905 · 1216','Python','19 tests']},
+  {name:'Batch Assay Calculator', repo:'batch-assay-calculator', tag:'HPLC assay · dry basis · % label claim',
+   img:'previews/batch-assay-calculator.png', desc:'Assay from response areas, standard potency, weights and dilutions with LOD correction, mg per unit, and a pass or fail against the 95 to 105% band.',
+   badges:['HPLC / UV','Python','17 tests']},
+  {name:'Cumulative Hold Time Calculator', repo:'cumulative-hold-time-calculator', tag:'Dwell time from granulation to compression',
+   img:'previews/cumulative-hold-time-calculator.png', desc:'Tracks per step and cumulative in process hold time against limits, forecasts a running step and flags an excursion before the batch clock runs out.',
+   badges:['Excursion flag','Python','13 tests']},
 ];
 document.getElementById('grid').innerHTML = PROJECTS.map(p =>
   '<div class="card"><a class="img" href="https://marknwilliam.github.io/'+p.repo+'/"><img src="'+p.img+'" alt="'+p.name+'"></a>'+
