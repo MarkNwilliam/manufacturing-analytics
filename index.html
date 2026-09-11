@@ -52,7 +52,7 @@
     Eleven working tools for pharmaceutical and process manufacturing. From
     OEE, batch analytics, root cause analysis, predictive maintenance, purified
     water and cost analysis all the way to punch sticking risk, granule PSD,
-    tablet QC, batch assay and hold time for oral solid dosage forms. Every tool
+    dispensing, tablet QC and hold time for oral solid dosage forms. Every tool
     ships as a dependency-free Python library with unit tests and a live
     interactive dashboard.
   </p>
@@ -115,9 +115,9 @@ const PROJECTS = [
   {name:'OSD Tablet QC Dashboard', repo:'osd-tablet-qc-dashboard', cat:'osd', tag:'Weight variation · AV · friability · hardness',
    img:'previews/osd-tablet-qc-dashboard.png', desc:'USP 905 weight variation and Acceptance Value, content uniformity, USP 1216 friability, hardness spread and the force to hardness correlation.',
    badges:['USP 905 · 1216','Python','19 tests']},
-  {name:'Batch Assay Calculator', repo:'batch-assay-calculator', cat:'osd', tag:'HPLC assay · dry basis · % label claim',
-   img:'previews/batch-assay-calculator.png', desc:'Assay from response areas, standard potency, weights and dilutions with LOD correction, mg per unit, and a pass or fail against the 95 to 105% band.',
-   badges:['HPLC / UV','Python','17 tests']},
+  {name:'Batch Dispensing Calculator', repo:'batch-assay-calculator', cat:'osd', tag:'As is assay · quantity to dispense',
+   img:'previews/batch-assay-calculator.png', desc:'Reads the API assay as is from the certificate and turns the required pure active into the kilograms to weigh, rolls to the next lot when the selected one is not enough, and flags the batch short on stock.',
+   badges:['As is assay','Python','33 tests']},
   {name:'Cumulative Hold Time Calculator', repo:'cumulative-hold-time-calculator', cat:'osd', tag:'Dwell time from granulation to compression',
    img:'previews/cumulative-hold-time-calculator.png', desc:'Tracks per step and cumulative in process hold time against limits, forecasts a running step and flags an excursion before the batch clock runs out.',
    badges:['Excursion flag','Python','13 tests']},

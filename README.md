@@ -31,7 +31,7 @@ that opens offline.
 | 7 | **Tablet Sticking Predictor** | Which granule batch will stick least on the press? | [repo](https://github.com/MarkNwilliam/tablet-sticking-predictor) · [demo](https://marknwilliam.github.io/tablet-sticking-predictor/) |
 | 8 | **Granule PSD Analyzer** | What are the D values, span and fines of the granulation? | [repo](https://github.com/MarkNwilliam/granule-psd-analyzer) · [demo](https://marknwilliam.github.io/granule-psd-analyzer/) |
 | 9 | **OSD Tablet QC Dashboard** | Do the tablets pass weight, AV, friability and hardness? | [repo](https://github.com/MarkNwilliam/osd-tablet-qc-dashboard) · [demo](https://marknwilliam.github.io/osd-tablet-qc-dashboard/) |
-| 10 | **Batch Assay Calculator** | What is the assay and % label claim of the batch? | [repo](https://github.com/MarkNwilliam/batch-assay-calculator) · [demo](https://marknwilliam.github.io/batch-assay-calculator/) |
+| 10 | **Batch Dispensing Calculator** | How much of each API lot do we weigh from its as is assay? | [repo](https://github.com/MarkNwilliam/batch-assay-calculator) · [demo](https://marknwilliam.github.io/batch-assay-calculator/) |
 | 11 | **Cumulative Hold Time Calculator** | Is the batch sitting too long before compression? | [repo](https://github.com/MarkNwilliam/cumulative-hold-time-calculator) · [demo](https://marknwilliam.github.io/cumulative-hold-time-calculator/) |
 
 ---
@@ -69,7 +69,7 @@ that opens offline.
 - **Math first** — each tool encodes the real method, not demo filler:
   A×P×Q decomposition, USP &lt;645&gt; stage-1 limits, a gradient-descent
   logistic regression, cost build-up and material yield, punch sticking
-  scores, USP &lt;905&gt; Acceptance Value, dry basis assay and hold time limits.
+  scores, USP &lt;905&gt; Acceptance Value, as is assay correction and hold time limits.
 - **Testable** — `180` unit tests across the eleven modules; run any of them
   with `python3 -m unittest test_*.py`.
 - **Zero-dependency dashboards** — plain HTML/CSS/JS with the native canvas
