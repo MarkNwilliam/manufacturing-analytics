@@ -52,15 +52,16 @@
     Eleven working tools for pharmaceutical and process manufacturing. From
     OEE, batch analytics, root cause analysis, predictive maintenance, purified
     water and cost analysis all the way to punch sticking risk, granule PSD,
-    dispensing, tablet QC and hold time for oral solid dosage forms. Every tool
+    dispensing, tablet QC, granulation QC and hold time for oral solid dosage
+    forms. Every tool
     ships as a dependency-free Python library with unit tests and a live
     interactive dashboard.
   </p>
   <div class="chips">
     <span class="chip">Chemical Engineer</span>
     <span class="chip">WHO-prequalified cGMP plant</span>
-    <span class="chip">180 unit tests passing</span>
-    <span class="chip">11 live demos</span>
+    <span class="chip">207 unit tests passing</span>
+    <span class="chip">12 live demos</span>
   </div>
 </header>
 <div class="wrap">
@@ -120,7 +121,10 @@ const PROJECTS = [
    badges:['As is assay','Python','33 tests']},
   {name:'Cumulative Hold Time Calculator', repo:'cumulative-hold-time-calculator', cat:'osd', tag:'Dwell time from granulation to compression',
    img:'previews/cumulative-hold-time-calculator.png', desc:'Field calculator on the 24 hour clock: differences between any taken and processed date times, a running total of hh:mm durations against the 72:00 hold limit, and a valid up to date and time from a validity period.',
-   badges:['Excursion flag','Python','13 tests']},
+   badges:['Excursion flag','Python','19 tests']},
+  {name:'Granulation QC Calculator', repo:'granulation-qc-calculator', cat:'osd', tag:'PSD sieve analysis · LOD · densities · USP 1174',
+   img:'previews/granulation-qc-calculator.png', desc:'Sieve weights to % w/w with the batch record rounding, cumulative above and below 60#, fines and loss cross checks, Carr's Index and Hausner Ratio with USP and Ph. Eur. flow ratings, and a live ease of compression verdict.',
+   badges:['USP 1174','Python','27 tests']},
 ];
 const CATS={plant:'Plant operations',osd:'OSD tableting'};
 function render(f){
