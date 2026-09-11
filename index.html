@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manufacturing Analytics Portfolio — Mark William Nkugwa</title>
+<title>Mark William Nkugwa | Manufacturing Analytics Portfolio</title>
 <style>
   :root{
     --ink:#0f172a; --muted:#64748b; --brand:#0e7490; --brand2:#155e75;
@@ -38,6 +38,10 @@
   .stack{display:flex;gap:10px;flex-wrap:wrap}
   .stack span{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:12.5px}
   .stack b{color:var(--brand)}
+  .filters{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+  .fbtn{font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 16px;cursor:pointer}
+  .fbtn.on{background:var(--brand);border-color:var(--brand);color:#fff}
+  .fbtn:hover{background:var(--brand2);border-color:var(--brand2);color:#fff}
   footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 20px}
 </style>
 </head>
@@ -45,29 +49,36 @@
 <header>
   <h1>Manufacturing Analytics Portfolio</h1>
   <p>
-    Six working tools for pharmaceutical and process manufacturing — OEE, batch analytics,
-    root-cause analysis, predictive maintenance, purified-water monitoring and cost analysis.
-    Every tool ships as a dependency-free Python library with unit tests and a live
+    Eleven working tools for pharmaceutical and process manufacturing. From
+    OEE, batch analytics, root cause analysis, predictive maintenance, purified
+    water and cost analysis all the way to punch sticking risk, granule PSD,
+    tablet QC, batch assay and hold time for oral solid dosage forms. Every tool
+    ships as a dependency-free Python library with unit tests and a live
     interactive dashboard.
   </p>
   <div class="chips">
     <span class="chip">Chemical Engineer</span>
     <span class="chip">WHO-prequalified cGMP plant</span>
-    <span class="chip">158 unit tests passing</span>
+    <span class="chip">180 unit tests passing</span>
     <span class="chip">11 live demos</span>
   </div>
 </header>
 <div class="wrap">
 
-  <div class="sec">The six tools</div>
+  <div class="sec">All projects</div>
+  <div class="filters">
+    <button class="fbtn on" data-f="all">All</button>
+    <button class="fbtn" data-f="plant">Plant operations</button>
+    <button class="fbtn" data-f="osd">OSD tableting</button>
+  </div>
   <div class="grid" id="grid"></div>
 
   <div class="sec">Common engineering thread</div>
   <div class="stack">
-    <span><b>Math first</b> — each tool encodes the real method (OEE decomposition, USP &lt;645&gt;, logistic risk, margin &amp; yield), not demo filler</span>
-    <span><b>Testable</b> — every module has a unit-test suite that can run on any stock Python 3.9+</span>
-    <span><b>Zero-dependency dashboards</b> — HTML + CSS + JS + canvas, no build step, openable offline</span>
-    <span><b>Interpretable</b> — no black boxes; coefficients, limits and decision bands are shown next to the charts</span>
+    <span><b>Math first</b>, each tool encodes the real method (OEE decomposition, USP &lt;645&gt;, logistic risk, margin &amp; yield, punch sticking scores, detergent assay), not demo filler</span>
+    <span><b>Testable</b>, every module has a unit-test suite that can run on any stock Python 3.9+</span>
+    <span><b>Zero-dependency dashboards</b>, plain HTML and canvas, no build step, openable offline</span>
+    <span><b>Interpretable</b>, no black boxes; coefficients, limits and decision bands are shown next to the charts</span>
   </div>
 
 </div>
@@ -77,47 +88,57 @@
 </footer>
 <script>
 const PROJECTS = [
-  {name:'OEE Dashboard', repo:'oee-dashboard', tag:'Availability × Performance × Quality',
+  {name:'OEE Dashboard', repo:'oee-dashboard', cat:'plant', tag:'Availability × Performance × Quality',
    img:'previews/oee-dashboard.png', desc:'Per-shift OEE with availability, performance and quality loss breakdown, a downtime Pareto and the money lost to each stop reason at burden rate.',
    badges:['ISO 22400','Python','11 tests']},
-  {name:'Batch Manufacturing Dashboard', repo:'batch-manufacturing-dashboard', tag:'Yield · processing time · rejections · operators',
+  {name:'Batch Manufacturing Dashboard', repo:'batch-manufacturing-dashboard', cat:'plant', tag:'Yield · processing time · rejections · operators',
    img:'previews/batch-manufacturing-dashboard.png', desc:'Material yield vs theoretical charge, monthly yield trend, rejection rate, mean process hours, operator kg/h productivity and downtime Pareto.',
    badges:['Material yield','Python','10 tests']},
-  {name:'Root Cause Analysis Tool', repo:'root-cause-analysis-tool', tag:'Fishbone (6M) + 5 Whys + CAPA reports',
+  {name:'Root Cause Analysis Tool', repo:'root-cause-analysis-tool', cat:'plant', tag:'Fishbone (6M) + 5 Whys + CAPA reports',
    img:'previews/root-cause-analysis-tool.png', desc:'Record deviations, auto-classify causes into the 6M branches, drive the 5 Whys to a root cause and generate the quality deviation report.',
    badges:['6M classifier','Python','15 tests']},
-  {name:'Predictive Maintenance', repo:'predictive-maintenance', tag:'P(failure in next 30 days)',
+  {name:'Predictive Maintenance', repo:'predictive-maintenance', cat:'plant', tag:'P(failure in next 30 days)',
    img:'previews/predictive-maintenance.png', desc:'Logistic regression fitted from scratch in pure Python on temperature, vibration and running hours to score failure risk and schedule maintenance before the alarm.',
    badges:['Logistic regression','Pure Python','13 tests']},
-  {name:'Water System Monitoring', repo:'water-system-monitoring', tag:'Purified water · USP <645>',
+  {name:'Water System Monitoring', repo:'water-system-monitoring', cat:'plant', tag:'Purified water · USP <645>',
    img:'previews/water-system-monitoring.png', desc:'Conductivity evaluated against the temperature-dependent USP &lt;645&gt; stage-1 limit, RO/UF/EDI rejection and a live sanitisation schedule with countdown.',
    badges:['USP <645>','Python','17 tests']},
-{name:'Manufacturing Cost Analysis', repo:'manufacturing-cost-analysis', tag:'Which product makes money · which process wastes it',
+  {name:'Manufacturing Cost Analysis', repo:'manufacturing-cost-analysis', cat:'plant', tag:'Which product makes money · which process wastes it',
    img:'previews/manufacturing-cost-analysis.png', desc:'Period revenue and cost build-up (raw material / labour / energy / overhead), margin per product line and downtime waste scored in money.',
    badges:['Margin · COGS','Python','10 tests']},
-  {name:'Tablet Sticking Predictor', repo:'tablet-sticking-predictor', tag:'Pre compression sticking and picking risk',
+  {name:'Tablet Sticking Predictor', repo:'tablet-sticking-predictor', cat:'osd', tag:'Pre compression sticking and picking risk',
    img:'previews/tablet-sticking-predictor.png', desc:'Ranks granule batches by punch face sticking risk from bulk and tapped density, LOD and the sieve fines, so the batch least likely to stick runs first.',
    badges:['Punch face film','Python','19 tests']},
-  {name:'Granule PSD Analyzer', repo:'granule-psd-analyzer', tag:'Cumulative undersize · D10 D50 D90 · span',
+  {name:'Granule PSD Analyzer', repo:'granule-psd-analyzer', cat:'osd', tag:'Cumulative undersize · D10 D50 D90 · span',
    img:'previews/granule-psd-analyzer.png', desc:'Sieve retained fractions to D values, span and uniformity, and hands the fines and coarse fractions straight into the sticking predictor.',
    badges:['ASTM E11','Python','14 tests']},
-  {name:'OSD Tablet QC Dashboard', repo:'osd-tablet-qc-dashboard', tag:'Weight variation · AV · friability · hardness',
+  {name:'OSD Tablet QC Dashboard', repo:'osd-tablet-qc-dashboard', cat:'osd', tag:'Weight variation · AV · friability · hardness',
    img:'previews/osd-tablet-qc-dashboard.png', desc:'USP 905 weight variation and Acceptance Value, content uniformity, USP 1216 friability, hardness spread and the force to hardness correlation.',
    badges:['USP 905 · 1216','Python','19 tests']},
-  {name:'Batch Assay Calculator', repo:'batch-assay-calculator', tag:'HPLC assay · dry basis · % label claim',
+  {name:'Batch Assay Calculator', repo:'batch-assay-calculator', cat:'osd', tag:'HPLC assay · dry basis · % label claim',
    img:'previews/batch-assay-calculator.png', desc:'Assay from response areas, standard potency, weights and dilutions with LOD correction, mg per unit, and a pass or fail against the 95 to 105% band.',
    badges:['HPLC / UV','Python','17 tests']},
-  {name:'Cumulative Hold Time Calculator', repo:'cumulative-hold-time-calculator', tag:'Dwell time from granulation to compression',
+  {name:'Cumulative Hold Time Calculator', repo:'cumulative-hold-time-calculator', cat:'osd', tag:'Dwell time from granulation to compression',
    img:'previews/cumulative-hold-time-calculator.png', desc:'Tracks per step and cumulative in process hold time against limits, forecasts a running step and flags an excursion before the batch clock runs out.',
    badges:['Excursion flag','Python','13 tests']},
 ];
-document.getElementById('grid').innerHTML = PROJECTS.map(p =>
-  '<div class="card"><a class="img" href="https://marknwilliam.github.io/'+p.repo+'/"><img src="'+p.img+'" alt="'+p.name+'"></a>'+
-  '<div class="body"><h3>'+p.name+'</h3><div class="tag">'+p.tag+'</div><p>'+p.desc+'</p>'+
-  '<div class="badges">'+p.badges.map(b=>'<span class="b teal">'+b+'</span>').join('')+'</div>'+
-  '<div class="links"><a class="btn solid" href="https://marknwilliam.github.io/'+p.repo+'/">Live demo</a>'+
-  '<a class="btn ghost" href="https://github.com/MarkNwilliam/'+p.repo+'">Source on GitHub</a></div></div></div>'
-).join('');
+const CATS={plant:'Plant operations',osd:'OSD tableting'};
+function render(f){
+  const list=f==='all'?PROJECTS:PROJECTS.filter(p=>p.cat===f);
+  document.getElementById('grid').innerHTML = list.map(p =>
+    '<div class="card"><a class="img" href="https://marknwilliam.github.io/'+p.repo+'/"><img src="'+p.img+'" alt="'+p.name+'"></a>'+
+    '<div class="body"><h3>'+p.name+'</h3><div class="tag">'+p.tag+'</div><p>'+p.desc+'</p>'+
+    '<div class="badges">'+p.badges.map(b=>'<span class="b teal">'+b+'</span>').join('')+
+    '<span class="b gray">'+CATS[p.cat]+'</span></div>'+
+    '<div class="links"><a class="btn solid" href="https://marknwilliam.github.io/'+p.repo+'/">Live demo</a>'+
+    '<a class="btn ghost" href="https://github.com/MarkNwilliam/'+p.repo+'">Source on GitHub</a></div></div></div>'
+  ).join('');
+}
+document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); render(b.dataset.f);
+}));
+render('all');
 </script>
 </body>
 </html>

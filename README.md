@@ -7,7 +7,7 @@ dependency-free Python library, unit tests and a live interactive dashboard.
 
 [![Live index](https://img.shields.io/badge/live%20index-github%20pages-0e7490)](https://marknwilliam.github.io/manufacturing-analytics/)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](#)
-[![Tests](https://img.shields.io/badge/tests-158%20passing-green)](#)
+[![Tests](https://img.shields.io/badge/tests-180%20passing-green)](#)
 [![Tools](https://img.shields.io/badge/tools-11-orange)](#)
 
 </div>
@@ -70,7 +70,7 @@ that opens offline.
   A×P×Q decomposition, USP &lt;645&gt; stage-1 limits, a gradient-descent
   logistic regression, cost build-up and material yield, punch sticking
   scores, USP &lt;905&gt; Acceptance Value, dry basis assay and hold time limits.
-- **Testable** — `158` unit tests across the eleven modules; run any of them
+- **Testable** — `180` unit tests across the eleven modules; run any of them
   with `python3 -m unittest test_*.py`.
 - **Zero-dependency dashboards** — plain HTML/CSS/JS with the native canvas
   API; no build step, no npm, works offline.
