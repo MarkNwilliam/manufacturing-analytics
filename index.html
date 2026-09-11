@@ -86,7 +86,8 @@
         <span class="chip">Chemical Engineer</span>
         <span class="chip">cGMP solid dosage</span>
         <span class="chip">317 unit tests passing</span>
-        <span class="chip">15 live demos</span>
+        <span class="chip">17 live demos</span>
+        <span class="chip">50+ projects</span>
       </div>
       <div class="heroLinks">
         <a class="hlink" href="mailto:nkugwamarkwilliam@gmail.com">Email</a>
@@ -110,11 +111,13 @@
       approval rate around 98 percent.
     </p>
     <p>
-      This portfolio is the toolset I wished I had on the floor. Every project is a
-      dependency free Python library with a unit test suite and a live dashboard, and each
-      one encodes the real method rather than demo filler, from OEE decomposition and USP
-      limits to the Carr and Hausner flow table and the Heckel compaction models. I also
-      build software and AI products, and I read Chemical Engineering at Kyambogo University.
+      This portfolio is the toolset I wished I had on the floor, and it keeps growing. My
+      engineering tools are dependency free Python libraries with unit test suites and live
+      dashboards, each encoding the real method rather than demo filler, from OEE
+      decomposition and USP limits to the Carr and Hausner flow table and the Heckel
+      compaction models. The wider portfolio adds cement, oil and gas metering, calibration,
+      beverage, process and P&amp;ID, data science, data engineering and software projects. I read
+      Chemical Engineering at Kyambogo University and I build software and AI products.
     </p>
   </div>
 
@@ -199,7 +202,16 @@
   <div class="filters">
     <button class="fbtn on" data-f="all">All</button>
     <button class="fbtn" data-f="plant">Plant operations</button>
-    <button class="fbtn" data-f="osd">OSD tableting</button>
+    <button class="fbtn" data-f="osd">Pharma and OSD</button>
+    <button class="fbtn" data-f="cement">Cement</button>
+    <button class="fbtn" data-f="oilgas">Oil, gas and metering</button>
+    <button class="fbtn" data-f="calib">Calibration and inspection</button>
+    <button class="fbtn" data-f="bev">Beverage and FMCG</button>
+    <button class="fbtn" data-f="food">Food safety</button>
+    <button class="fbtn" data-f="process">Process and P&ID</button>
+    <button class="fbtn" data-f="ds">Data science</button>
+    <button class="fbtn" data-f="de">Data engineering</button>
+    <button class="fbtn" data-f="sw">Software and AI</button>
   </div>
   <div class="grid" id="grid"></div>
 
@@ -219,63 +231,74 @@
 </footer>
 <script>
 const PROJECTS = [
-  {name:'Solution Preparation Calculator', repo:'solution-preparation-calculator', cat:'plant', tag:'Passivation · IPA · Teepol · chlorine dosing',
-   img:'previews/solution-preparation-calculator.png', desc:'Every solution in the compounding manual with the exact formula, the preparation steps, the mandatory PPE, the quality gate, the acceptance criteria and the logbook reference, plus an auto generated preparation record with a Doer and Checker signature line.',
-   badges:['SOP MT-143 etc','Python','13 tests']},
-  {name:'OEE Dashboard', repo:'oee-dashboard', cat:'plant', tag:'Availability × Performance × Quality',
-   img:'previews/oee-dashboard.png', desc:'Per-shift OEE with availability, performance and quality loss breakdown, a downtime Pareto and the money lost to each stop reason at burden rate.',
-   badges:['ISO 22400','Python','11 tests']},
-  {name:'Batch Manufacturing Dashboard', repo:'batch-manufacturing-dashboard', cat:'plant', tag:'Yield · processing time · rejections · operators',
-   img:'previews/batch-manufacturing-dashboard.png', desc:'Material yield vs theoretical charge, monthly yield trend, rejection rate, mean process hours, operator kg/h productivity and downtime Pareto.',
-   badges:['Material yield','Python','10 tests']},
-  {name:'Root Cause Analysis Tool', repo:'root-cause-analysis-tool', cat:'plant', tag:'Fishbone (6M) + 5 Whys + CAPA reports',
-   img:'previews/root-cause-analysis-tool.png', desc:'Record deviations, auto-classify causes into the 6M branches, drive the 5 Whys to a root cause and generate the quality deviation report.',
-   badges:['6M classifier','Python','15 tests']},
-  {name:'Predictive Maintenance', repo:'predictive-maintenance', cat:'plant', tag:'P(failure in next 30 days)',
-   img:'previews/predictive-maintenance.png', desc:'Logistic regression fitted from scratch in pure Python on temperature, vibration and running hours to score failure risk and schedule maintenance before the alarm.',
-   badges:['Logistic regression','Pure Python','13 tests']},
-  {name:'Water System Monitoring', repo:'water-system-monitoring', cat:'plant', tag:'Purified water · USP <645>',
-   img:'previews/water-system-monitoring.png', desc:'Conductivity evaluated against the temperature-dependent USP &lt;645&gt; stage-1 limit, RO/UF/EDI rejection and a live sanitisation schedule with countdown.',
-   badges:['USP <645>','Python','17 tests']},
-  {name:'Manufacturing Cost Analysis', repo:'manufacturing-cost-analysis', cat:'plant', tag:'Which product makes money · which process wastes it',
-   img:'previews/manufacturing-cost-analysis.png', desc:'Period revenue and cost build-up (raw material / labour / energy / overhead), margin per product line and downtime waste scored in money.',
-   badges:['Margin · COGS','Python','10 tests']},
-  {name:'Tablet Sticking Predictor', repo:'tablet-sticking-predictor', cat:'osd', tag:'Pre compression sticking and picking risk',
-   img:'previews/tablet-sticking-predictor.png', desc:'Ranks granule batches by punch face sticking risk from bulk and tapped density, LOD and the sieve fines, so the batch least likely to stick runs first.',
-   badges:['Punch face film','Python','19 tests']},
-  {name:'Granule PSD Analyzer', repo:'granule-psd-analyzer', cat:'osd', tag:'Cumulative undersize · D10 D50 D90 · span',
-   img:'previews/granule-psd-analyzer.png', desc:'Sieve retained fractions to D values, span and uniformity, and hands the fines and coarse fractions straight into the sticking predictor.',
-   badges:['ASTM E11','Python','14 tests']},
-  {name:'OSD Tablet QC Dashboard', repo:'osd-tablet-qc-dashboard', cat:'osd', tag:'Weight variation · AV · friability · hardness',
-   img:'previews/osd-tablet-qc-dashboard.png', desc:'USP 905 weight variation and Acceptance Value, content uniformity, USP 1216 friability, hardness spread and the force to hardness correlation.',
-   badges:['USP 905 · 1216','Python','19 tests']},
-  {name:'Batch Dispensing Calculator', repo:'batch-assay-calculator', cat:'osd', tag:'As is assay · quantity to dispense',
-   img:'previews/batch-assay-calculator.png', desc:'Reads the API assay as is from the certificate and turns the required pure active into the kilograms to weigh, rolls to the next lot when the selected one is not enough, and flags the batch short on stock.',
-   badges:['As is assay','Python','33 tests']},
-  {name:'Cumulative Hold Time Calculator', repo:'cumulative-hold-time-calculator', cat:'osd', tag:'Dwell time from granulation to compression',
-   img:'previews/cumulative-hold-time-calculator.png', desc:'Field calculator on the 24 hour clock: differences between any taken and processed date times, a running total of hh:mm durations against the 72:00 hold limit, and a valid up to date and time from a validity period.',
-   badges:['Excursion flag','Python','19 tests']},
-  {name:'Granulation Area Log', repo:'granulation-area-log', cat:'osd', tag:'SOP MT-145 · process cycles · downtime codes',
-   img:'previews/granulation-area-log.png', desc:'Per area process cycle tables with From and To as hh:mm returning minutes, the master downtime reason codes, standard in between activities predicted from personnel and machines, gap auto categorisation with inferred reason codes, shift aware meal breaks, a post process chain that projects the next batch start, a multi batch register with weighted yield, and an auto generated professional daily report.',
-   badges:['SOP MT-145','Python','49 tests']},
-  {name:'Product Cleaning Scheduler', repo:'product-cleaning-scheduler', cat:'osd', tag:'Changeover cleaning · validated scrub times · crew parallel',
-   img:'previews/product-cleaning-scheduler.png', desc:'Holds the granulation cleaning parameters for every equipment model, lays out each component with From and To as hh:mm from a start time, preserves the validated scrubbing time, and shortens the finish as you add people, with the water and Teepol totals and an auto generated cleaning record.',
-   badges:['SOP OI-04 to 36','Python','21 tests']},
-  {name:'Granulation QC Calculator', repo:'granulation-qc-calculator', cat:'osd', tag:'PSD sieve analysis · LOD · densities · USP 1174',
-   img:'previews/granulation-qc-calculator.png', desc:"Sieve weights to % w/w with the batch record rounding, cumulative above and below 60#, fines and loss cross checks, Carr's Index and Hausner Ratio with USP and Ph. Eur. flow ratings, and a live ease of compression verdict, then a DLT 50/300/300 press profile that recommends the turret output and flags sticking and capping risk with corrective actions.",
-   badges:['USP 1174','DLT press profile','54 tests']},
+  {name:"OEE Dashboard", repo:"oee-dashboard", cat:"plant", tag:"Availability x Performance x Quality", desc:"Per shift OEE with the availability, performance and quality loss breakdown, a downtime Pareto and the money lost to each stop reason at burden rate.", badges:["ISO 22400", "Python", "11 tests"], live:true, img:"previews/oee-dashboard.png"},
+  {name:"Batch Manufacturing Dashboard", repo:"batch-manufacturing-dashboard", cat:"plant", tag:"Yield, processing time, rejections, operators", desc:"Material yield against the theoretical charge, monthly yield trend, rejection rate, mean process hours, operator productivity and a downtime Pareto.", badges:["Material yield", "Python", "10 tests"], live:true, img:"previews/batch-manufacturing-dashboard.png"},
+  {name:"Root Cause Analysis Tool", repo:"root-cause-analysis-tool", cat:"plant", tag:"Fishbone 6M, 5 Whys, CAPA", desc:"Record deviations, auto classify causes into the 6M branches, drive the 5 Whys to a root cause and generate the quality deviation report.", badges:["6M classifier", "Python", "15 tests"], live:true, img:"previews/root-cause-analysis-tool.png"},
+  {name:"Predictive Maintenance", repo:"predictive-maintenance", cat:"plant", tag:"Failure risk in the next 30 days", desc:"Logistic regression fitted from scratch in pure Python on temperature, vibration and running hours to score failure risk and schedule maintenance before the alarm.", badges:["Logistic regression", "Pure Python", "13 tests"], live:true, img:"previews/predictive-maintenance.png"},
+  {name:"Water System Monitoring", repo:"water-system-monitoring", cat:"plant", tag:"Purified water, USP 645", desc:"Conductivity evaluated against the temperature dependent USP 645 stage 1 limit, RO, UF and EDI rejection and a live sanitisation schedule.", badges:["USP 645", "Python", "17 tests"], live:true, img:"previews/water-system-monitoring.png"},
+  {name:"Manufacturing Cost Analysis", repo:"manufacturing-cost-analysis", cat:"plant", tag:"Margin, COGS, downtime waste", desc:"Period revenue and cost build up across raw material, labour, energy and overhead, margin per product line and downtime waste scored in money.", badges:["Margin and COGS", "Python", "10 tests"], live:true, img:"previews/manufacturing-cost-analysis.png"},
+  {name:"Tablet Sticking Predictor", repo:"tablet-sticking-predictor", cat:"osd", tag:"Pre compression sticking and picking risk", desc:"Ranks granule batches by punch face sticking risk from bulk and tapped density, LOD and the sieve fines, so the batch least likely to stick runs first.", badges:["Punch face film", "Python", "19 tests"], live:true, img:"previews/tablet-sticking-predictor.png"},
+  {name:"Granule PSD Analyzer", repo:"granule-psd-analyzer", cat:"osd", tag:"Cumulative undersize, D10 D50 D90, span", desc:"Sieve retained fractions to D values, span and uniformity, and hands the fines and coarse fractions straight into the sticking predictor.", badges:["ASTM E11", "Python", "14 tests"], live:true, img:"previews/granule-psd-analyzer.png"},
+  {name:"OSD Tablet QC Dashboard", repo:"osd-tablet-qc-dashboard", cat:"osd", tag:"Weight variation, AV, friability, hardness", desc:"USP 905 weight variation and Acceptance Value, content uniformity, USP 1216 friability, hardness spread and the force to hardness correlation.", badges:["USP 905 and 1216", "Python", "19 tests"], live:true, img:"previews/osd-tablet-qc-dashboard.png"},
+  {name:"Batch Dispensing Calculator", repo:"batch-assay-calculator", cat:"osd", tag:"As is assay, quantity to dispense", desc:"Reads the API assay as is from the certificate and turns the required pure active into the kilograms to weigh, rolling to the next lot and flagging a shortfall.", badges:["As is assay", "Python", "33 tests"], live:true, img:"previews/batch-assay-calculator.png"},
+  {name:"Cumulative Hold Time Calculator", repo:"cumulative-hold-time-calculator", cat:"osd", tag:"Dwell time from granulation to compression", desc:"Field calculator on the 24 hour clock: elapsed time, a running total against the hold limit, and a valid up to date and time from a validity period.", badges:["Excursion flag", "Python", "19 tests"], live:true, img:"previews/cumulative-hold-time-calculator.png"},
+  {name:"Granulation QC Calculator", repo:"granulation-qc-calculator", cat:"osd", tag:"PSD sieve analysis, LOD, densities, USP 1174", desc:"Sieve weights to percent w/w with the batch record rounding, Carr and Hausner USP 1174 flow ratings, an ease of compression verdict and a DLT press profile.", badges:["USP 1174", "DLT press profile", "54 tests"], live:true, img:"previews/granulation-qc-calculator.png"},
+  {name:"Granulation Area Log", repo:"granulation-area-log", cat:"osd", tag:"SOP MT-145, process cycles, downtime codes", desc:"Area process cycle tables with From and To as hh:mm, the master downtime codes, gap auto categorisation, shift breaks, a post process chain, a batch register and auto reports.", badges:["SOP MT-145", "Python", "49 tests"], live:true, img:"previews/granulation-area-log.png"},
+  {name:"Product Cleaning Scheduler", repo:"product-cleaning-scheduler", cat:"osd", tag:"Changeover cleaning, validated scrub times", desc:"Holds the granulation cleaning parameters for every model, lays out each component from a start time, preserves the validated scrubbing time and shortens the finish as you add people.", badges:["SOP OI-04 to 36", "Python", "21 tests"], live:true, img:"previews/product-cleaning-scheduler.png"},
+  {name:"Solution Preparation Calculator", repo:"solution-preparation-calculator", cat:"osd", tag:"Passivation, IPA, Teepol, chlorine dosing", desc:"Every solution in the compounding manual with the exact formula, steps, PPE, quality gate, acceptance criteria and logbook, plus an auto preparation record.", badges:["SOP MT-143 etc", "Python", "13 tests"], live:true, img:"previews/solution-preparation-calculator.png"},
+  {name:"Cement Dispatch Dashboard", repo:"cement-dispatch-dashboard", cat:"cement", tag:"Packing plant dispatch and reconciliation", desc:"Daily cement dispatch against plan, packing rate, utilisation, stock balance and paper bag reconciliation by packing line.", badges:["Cement", "Python"], live:true, img:"previews/cement-dispatch-dashboard.png"},
+  {name:"Cement Blaine Fineness", repo:"cement-blaine-fineness", cat:"cement", tag:"ASTM C204, EN 196-6", desc:"Cement fineness by the Blaine air permeability method with the reference and direct methods, a standalone web UI and a Python CLI.", badges:["Blaine", "Python"], live:false},
+  {name:"Cement Mix Optimizer", repo:"cement-mix-optimizer", cat:"cement", tag:"Lowest cost clinker blend", desc:"Blend clinker, gypsum and additions to the lowest cost while holding C3S, C3A, SO3 and LOI targets.", badges:["Mix optimisation", "Python"], live:false},
+  {name:"Fiscal Metering Station", repo:"fiscal-metering-station", cat:"oilgas", tag:"ISO 5167, API MPMS, GUM", desc:"Fiscal and custody transfer metering with ISO 5167 orifice and Coriolis flow, API MPMS meter proving, GUM uncertainty and tamper evident custody tickets.", badges:["ISO 5167", "API MPMS", "GUM"], live:false},
+  {name:"Multiphase Measurement Uncertainty", repo:"multiphase-measurement-uncertainty", cat:"oilgas", tag:"Monte Carlo, water cut and gas fraction", desc:"Monte Carlo model of how water cut and gas fraction assumptions propagate into the reported oil volume on Uganda waxy crude.", badges:["Monte Carlo", "Uncertainty"], live:false},
+  {name:"Fiscal Correction Impact", repo:"fiscal-correction-impact", cat:"oilgas", tag:"Temperature and density correction error", desc:"How temperature and density correction error compounds into billed volume error and the dollar impact at crude prices.", badges:["API MPMS", "Uncertainty"], live:false},
+  {name:"Meter Drift Detection", repo:"meter-drift-detection", cat:"oilgas", tag:"Shewhart and CUSUM control charts", desc:"Shewhart and CUSUM control charts to catch gradual meter drift against sudden faults on flow computer meter factor data.", badges:["SPC", "CUSUM"], live:false},
+  {name:"Uganda Oil Revenue Reconciliation", repo:"uganda-oil-revenue-reconciliation", cat:"oilgas", tag:"Petroleum Fund reconciliation", desc:"Expected against reported revenue reconciliation for the Uganda Petroleum Fund and why custody metering collapses the uncertainty band.", badges:["Revenue", "Uncertainty"], live:false},
+  {name:"Calibration Management Toolkit", repo:"calibration-management-toolkit", cat:"calib", tag:"ISO/IEC 17025 programme", desc:"Equipment register and metrological traceability, interval scheduling, GUM uncertainty, ILAC-G8 conformity decisions, drift tracking and certificate generation.", badges:["ISO 17025", "GUM", "30 tests"], live:false},
+  {name:"Calibration Engineering", repo:"calibration-engineering", cat:"calib", tag:"Instrument calibration and uncertainty", desc:"Instrument calibration, uncertainty analysis and quality management systems for chemical engineering practice.", badges:["Calibration", "Uncertainty"], live:false},
+  {name:"Piping Inspection", repo:"piping-inspection", cat:"calib", tag:"ASME B31.3 stress and weld tracking", desc:"Piping and mechanical inspection toolkit with ASME B31.3 stress analysis, weld tracking, corrosion monitoring and material verification.", badges:["ASME B31.3", "Inspection"], live:false},
+  {name:"Bottling Line Performance", repo:"bottling-line-performance", cat:"bev", tag:"OEE SEMI E10 and ISO 22400", desc:"Production engineering toolkit for a carbonated soft drink bottling line: OEE, material balance and yield, downtime Pareto and changeover economics.", badges:["ISO 22400", "Material balance"], live:false},
+  {name:"Beverage QC Dashboard", repo:"beverage-qc-dashboard", cat:"bev", tag:"SPC, guard band, HACCP, CAPA", desc:"Soft drink quality control toolkit: batch testing, SPC with Shewhart and CUSUM, ILAC-G8 guard band conformity, ISO 17025 calibration, HACCP and CAPA.", badges:["SPC", "ILAC-G8"], live:false},
+  {name:"HACCP Plan Builder", repo:"haccp-plan-builder", cat:"food", tag:"Codex 12 steps and 7 principles", desc:"HACCP plan development and food safety risk assessment engine following the Codex twelve steps and seven principles.", badges:["HACCP", "Codex"], live:false},
+  {name:"Chemical Reactor P&ID", repo:"chemical-reactor-pid", cat:"process", tag:"CSTR design and dynamic simulation", desc:"Animated CSTR P&ID with reactor design calculations and an interactive dynamic simulation of the saponification of ethyl acetate.", badges:["CSTR", "P and ID"], live:true, img:"previews/chemical-reactor-pid.png"},
+  {name:"Biogas Digester P&ID", repo:"biogas-digester-pid", cat:"process", tag:"Anaerobic digestion to CHP", desc:"Animated biogas P&ID from agro waste anaerobic digestion to CHP power and fertiliser, with H2S clean up, gas holder and digestate separation.", badges:["P and ID", "Biogas"], live:false},
+  {name:"Agritech Bioethanol P&ID", repo:"agritech-bioethanol-pid", cat:"process", tag:"Sugarcane and cassava to ethanol", desc:"Animated bioethanol production P&ID from milling to fermentation, distillation and dehydration.", badges:["P and ID", "Bioethanol"], live:false},
+  {name:"Purified Water P&ID", repo:"purified-water-pid", cat:"process", tag:"PW generation and distribution", desc:"Purified water system P&ID for pharmaceutical water generation and distribution.", badges:["P and ID", "Purified water"], live:false},
+  {name:"Water for Injection P&ID", repo:"water-for-injection-pid", cat:"process", tag:"WFI distillation and hot loop", desc:"Water for Injection system P&ID with distillation generation and a hot 80 C distribution loop.", badges:["P and ID", "WFI"], live:false},
+  {name:"Uganda Dysarthric ASR", repo:"uganda-dysarthric-asr", cat:"ds", tag:"Luganda and Ugandan English speech", desc:"First Luganda and Ugandan English dysarthric automatic speech recognition models.", badges:["ASR", "Speech", "Python"], live:false},
+  {name:"IBM Emotion Detector", repo:"ibm-emotion-detector", cat:"ds", tag:"Emotion detection with Watson NLP", desc:"Emotion detection application built with IBM Watson NLP during the AI engineering programme.", badges:["NLP", "Watson"], live:false},
+  {name:"Drug Recommendation", repo:"drug_recommendation", cat:"ds", tag:"Recommendation model", desc:"Recommendation model that suggests drugs from patient and review data.", badges:["Recommender", "Python"], live:false},
+  {name:"Netflix Movies and The Office", repo:"Investigating-Netflix-Movies-and-Guest-Stars-in-The-Office", cat:"ds", tag:"Exploratory data analysis", desc:"Exploratory data analysis of Netflix movie durations and guest stars in The Office.", badges:["EDA", "Pandas"], live:false},
+  {name:"Android App Market", repo:"The-Android-App-Market-on-Google-Play", cat:"ds", tag:"Google Play data analysis", desc:"Data analysis of the Android app market on Google Play, categories, ratings and pricing.", badges:["EDA", "Pandas"], live:false},
+  {name:"Golden Age of Video Games", repo:"When-Was-the-Golden-Age-of-Video-Games_", cat:"ds", tag:"Video game sales analysis", desc:"Analysis of whether video games are getting better or the golden age has passed, using sales and review data.", badges:["EDA", "Pandas"], live:false},
+  {name:"AI Farmer", repo:"ai-farmer-streamlit", cat:"ds", tag:"Plant disease and yield", desc:"AI farming assistant with plant disease detection and yield forecasting, served with Streamlit.", badges:["ML", "Streamlit"], live:false},
+  {name:"ALX Files Manager", repo:"alx-files_manager", cat:"de", tag:"Auth, MongoDB, Redis, background jobs", desc:"Back end trimester summary project with authentication, MongoDB, Redis, pagination and background processing.", badges:["MongoDB", "Redis", "Node.js"], live:false},
+  {name:"ALX Backend Python", repo:"alx-backend-python", cat:"de", tag:"Python backend and data", desc:"Python backend and data handling exercises from the ALX programme.", badges:["Python", "Backend"], live:false},
+  {name:"ALX Backend User Data", repo:"alx-backend-user-data", cat:"de", tag:"Personal data and privacy", desc:"Handling of personal user data with privacy and security controls.", badges:["Python", "Data"], live:false},
+  {name:"ALX Backend JavaScript", repo:"alx-backend-javascript", cat:"de", tag:"Node.js backend fundamentals", desc:"Node.js backend fundamentals from the ALX programme.", badges:["Node.js", "Backend"], live:false},
+  {name:"Back End Development Capstone", repo:"Back-End-Development-Capstone", cat:"de", tag:"Django backend capstone", desc:"Capstone back end development project built with Django.", badges:["Django", "REST"], live:false},
+  {name:"Tutorcraft", repo:"tutorcraft", cat:"sw", tag:"AI video tutorial generator", desc:"AI powered personalised video tutorial generator that creates Khan Academy style lessons for any topic.", badges:["AI", "Next.js"], live:false},
+  {name:"VR Tutorcraft Meta", repo:"vrtutorcraftmeta", cat:"sw", tag:"Immersive VR learning", desc:"Immersive web app on the Meta Immersive Web SDK that generates and plays tutorial videos in VR.", badges:["VR", "Meta SDK"], live:false},
+  {name:"FrameDoc", repo:"FrameDoc", cat:"sw", tag:"Docs to tutorial videos", desc:"Turns technical documentation into tutorial videos using Gemini Nano.", badges:["Gemini Nano", "AI"], live:false},
+  {name:"ResearchVide", repo:"researchvidfull", cat:"sw", tag:"Papers to video summaries", desc:"Transforms academic papers into engaging video summaries using Azure AI.", badges:["Azure AI", "Video"], live:false},
+  {name:"SecondChance Backend", repo:"secondchance-backend", cat:"sw", tag:"Node, Express, MongoDB API", desc:"REST API backend for a give away and recycle household items platform.", badges:["Node.js", "MongoDB"], live:false},
+  {name:"Best Cars Dealership", repo:"cars-dealership-capstone", cat:"sw", tag:"IBM full stack capstone", desc:"Full stack capstone project, a car dealership application.", badges:["React", "Django"], live:false},
 ];
-const CATS={plant:'Plant operations',osd:'OSD tableting'};
+const CATS={"plant":"Plant operations","osd":"Pharma and OSD","cement":"Cement","oilgas":"Oil, gas and metering","calib":"Calibration and inspection","bev":"Beverage and FMCG","food":"Food safety","process":"Process and P&ID","ds":"Data science","de":"Data engineering","sw":"Software and AI"};
+const OG='https://opengraph.githubassets.com/1/MarkNwilliam/';
 function render(f){
   const list=f==='all'?PROJECTS:PROJECTS.filter(p=>p.cat===f);
-  document.getElementById('grid').innerHTML = list.map(p =>
-    '<div class="card"><a class="img" href="https://marknwilliam.github.io/'+p.repo+'/"><img src="'+p.img+'" alt="'+p.name+'"></a>'+
+  document.getElementById('grid').innerHTML = list.map(p=>{
+    const live=p.live===true;
+    const link=live?('https://marknwilliam.github.io/'+p.repo+'/'):('https://github.com/MarkNwilliam/'+p.repo);
+    const img=p.img?p.img:(OG+p.repo);
+    return '<div class="card"><a class="img" href="'+link+'"><img loading="lazy" src="'+img+'" alt="'+p.name+'"></a>'+
     '<div class="body"><h3>'+p.name+'</h3><div class="tag">'+p.tag+'</div><p>'+p.desc+'</p>'+
     '<div class="badges">'+p.badges.map(b=>'<span class="b teal">'+b+'</span>').join('')+
     '<span class="b gray">'+CATS[p.cat]+'</span></div>'+
-    '<div class="links"><a class="btn solid" href="https://marknwilliam.github.io/'+p.repo+'/">Live demo</a>'+
-    '<a class="btn ghost" href="https://github.com/MarkNwilliam/'+p.repo+'">Source on GitHub</a></div></div></div>'
-  ).join('');
+    '<div class="links">'+(live?'<a class="btn solid" href="'+link+'">Live demo</a>':'')+
+    '<a class="btn ghost" href="https://github.com/MarkNwilliam/'+p.repo+'">Source on GitHub</a></div></div></div>';
+  }).join('');
 }
 document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
