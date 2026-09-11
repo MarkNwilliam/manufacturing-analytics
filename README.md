@@ -7,7 +7,7 @@ dependency-free Python library, unit tests and a live interactive dashboard.
 
 [![Live index](https://img.shields.io/badge/live%20index-github%20pages-0e7490)](https://marknwilliam.github.io/manufacturing-analytics/)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](#)
-[![Tests](https://img.shields.io/badge/tests-234%20passing-green)](#)
+[![Tests](https://img.shields.io/badge/tests-256%20passing-green)](#)
 [![Tools](https://img.shields.io/badge/tools-11-orange)](#)
 
 </div>
@@ -34,6 +34,7 @@ that opens offline.
 | 10 | **Batch Dispensing Calculator** | How much of each API lot do we weigh from its as is assay? | [repo](https://github.com/MarkNwilliam/batch-assay-calculator) · [demo](https://marknwilliam.github.io/batch-assay-calculator/) |
 | 11 | **Cumulative Hold Time Calculator** | Is the batch sitting too long before compression? | [repo](https://github.com/MarkNwilliam/cumulative-hold-time-calculator) · [demo](https://marknwilliam.github.io/cumulative-hold-time-calculator/) |
 | 12 | **Granulation QC Calculator** | Does the granulation compress easily, and do the QC numbers pass? | [repo](https://github.com/MarkNwilliam/granulation-qc-calculator) · [demo](https://marknwilliam.github.io/granulation-qc-calculator/) |
+| 13 | **Granulation Area Log** | Are the area process times and downtime codes logged to SOP MT-145? | [repo](https://github.com/MarkNwilliam/granulation-area-log) · [demo](https://marknwilliam.github.io/granulation-area-log/) |
 
 ---
 
@@ -65,9 +66,9 @@ that opens offline.
 |---|
 | [![Hold time](previews/cumulative-hold-time-calculator.png)](https://marknwilliam.github.io/cumulative-hold-time-calculator/) |
 
-| Granulation QC Calculator |
-|---|
-| [![Granulation QC](previews/granulation-qc-calculator.png)](https://marknwilliam.github.io/granulation-qc-calculator/) |
+| Granulation QC Calculator | Granulation Area Log |
+|---|---|
+| [![Granulation QC](previews/granulation-qc-calculator.png)](https://marknwilliam.github.io/granulation-qc-calculator/) | [![Area log](previews/granulation-area-log.png)](https://marknwilliam.github.io/granulation-area-log/) |
 
 ## The engineering thread
 
@@ -76,7 +77,7 @@ that opens offline.
   logistic regression, cost build-up and material yield, punch sticking
   scores, USP &lt;905&gt; Acceptance Value, as is assay correction, hold time limits, the USP flow character table
   and the Heckel, Ryshkewitch-Duckworth and Leuenberger compaction models.
-- **Testable** — `234` unit tests across the twelve modules; run any of them
+- **Testable** — `256` unit tests across the thirteen modules; run any of them
   with `python3 -m unittest test_*.py`.
 - **Zero-dependency dashboards** — plain HTML/CSS/JS with the native canvas
   API; no build step, no npm, works offline.
